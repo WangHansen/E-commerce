@@ -1,0 +1,115 @@
+$header-top: #f7f7f7;
+$base-black: #171717;
+$base-yellow: #FFEB3B;
+
+@mixin breakpoint($point) {
+    @media ($point) { @content ; }
+}
+
+/* Header */
+div.header-top{
+	height: 40px;
+	line-height: 40px;
+	background-color: $header-top;
+	.header-top-left{
+		float: left;
+	}
+	.header-top-right{
+		float: right;
+	}
+}
+div.header-middle{
+	height: 100px;
+	background-color: $base-black;
+	.logo{
+		text-align: center;
+		height: 80px;
+		margin: 10px 0;
+		padding: 0 10px;
+		float: left;
+		width: 15%;
+		@include breakpoint('max-width: 992px'){
+			display: none;
+		}
+	}
+	.search-box{
+		width: 60%;
+		margin: 30px 0;
+		padding: 0 30px;
+		float: left;
+		input{
+			border: 5px solid $base-yellow;
+		}
+		@include breakpoint('max-width: 992px'){
+			width: 70%;
+			padding: 0 15px;
+		}
+	}
+	.search-text{
+		float: left;
+		padding-left: 5px;
+		font-size: 18px;
+		line-height: 40px\9;
+		height: 40px;
+		width: 80%;
+	}
+	.search-btn{
+		float: right;
+		background: $base-yellow;
+		width: 20%;
+		height: 40px;
+		vertical-align: top;
+		@include breakpoint('max-width: 565px'){
+			span{
+				display: none;
+			}
+			padding: 0 10px;
+		}
+	}
+	.cart{
+		float: right;
+		margin: 30px 0;
+		padding: 0 30px;
+		height: 40px;
+		width: 25%;
+		@include breakpoint('max-width: 992px'){
+			width: 30%;
+			padding: 0 15px;
+		}
+	}
+	.cart-num{
+		float: left;
+		display: block;
+		height: 100%;
+		width: 40%;
+		text-align: center;
+		background: $base-yellow;
+		border-right: 1px solid $base-black;
+	}
+	.cart-text{
+		float: left;
+		width: 60%;
+		height: 100%;
+		text-align: center;
+		display: block;
+		padding: 0 20px;
+		background: $base-yellow;
+		line-height: 40px;
+		@include breakpoint('max-width: 565px'){
+			i:nth-of-type(2){
+				display: none;
+			}
+			padding: 0 10px;
+		}
+	}
+}
+/* Header Icon*/
+.fa-header-special{
+	margin: 10px 5px 10px 0;
+	font-size: 20px;
+}
+/* Text after icon*/
+span.after-icon{
+	line-height: 40px;
+	vertical-align: top;
+}
